@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/common.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Доходы и Расходы</title>
+</head>
+<body>
+
+<div class="layout income">
+    <div class="header__menu-btn" id="header__menu-btn">
+        <span></span><span></span><span></span>
+    </div>
+    <div class="container-fluid ">
+        <div class="row flex-nowrap min-vh-100">
+            <div class="col-sm-4 col-md-3 col-xxl-2 d-flex flex-column flex-shrink-0 p-0 bg-white justify-content-between border-end sidebar_wrap "
+                 id="sidebar_wrap">
+
+                <a href="layout.html"
+                   class="d-flex align-items-center justify-content-center mb-3 mb-md-0 link-dark text-decoration-none p-3 pt-5">
+                    <div class="logo ">
+                        <img src="./static/images/Logo.png" alt="Логотип">
+                    </div>
+                </a>
+                <hr>
+                <ul class="nav nav-pills flex-column mb-auto p-3 mt-5">
+                    <li class="nav-item ">
+                        <a href="layout.html" class="nav-link active" aria-current="page">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-house " viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+                                <path fill-rule="evenodd"
+                                      d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+                            </svg>
+                            <span class="ms-2 lh-1 ">Главная</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="income-and-expenses.html" class="nav-link link-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-cash-coin" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                                <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                                <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                                <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+                            </svg>
+                            <span class="ms-2 lh-1 ">Доходы и расходы</span>
+                        </a>
+                    </li>
+                    <li>
+                        <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                            aria-controls="flush-collapseOne">
+                                        Категории
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+
+                                    <ul class="accordion-body nav nav-pills flex-column mb-auto p-0 ">
+                                        <li class="nav-item ">
+                                            <a href="income.html" class="nav-link active" aria-current="page">
+                                                <span class="ms-2 lh-1 ">Доходы</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item ">
+                                            <a href="expenses.html" class="nav-link " aria-current="page">
+                                                <span class="ms-2 lh-1 ">Расходы</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="p-3">Баланс <span class="text-primary">500$</span></div>
+                <hr>
+                <div class="dropdown p-3 dr">
+                    <a href="#" class="d-flex align-items-center link-dark text-decoration-none "
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="dropdown_ico ">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-person" viewBox="0 0 16 16">
+                                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                            </svg>
+                        </div>
+
+                        <div>RomanChernov</div>
+                    </a>
+                    <ul class="dropdown-menu text-small shadow">
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class=" col-sm-8 col-md-9 col-xxl-10 pt-5 ps-sm-5">
+                <h1 class="mt-sm-5 ms-3 mb-5 fs-1">Доходы и расходы</h1>
+                <div class="d-flex align-items-center mb-5">
+                    <button type="button" class="btn btn-success me-2" >Создать доход</button>
+                    <button type="button" class="btn btn-danger" >Создать расход</button>
+                </div>
+                <div class="mb-5">
+                    <div class="d-flex w-100 align-items-center flex-wrap gap-1">
+                        <button class="btn btn-outline-secondary">Сегодня</button>
+                        <button class="btn btn-outline-secondary">Неделя</button>
+                        <button class="btn btn-outline-secondary">Месяц</button>
+                        <button class="btn btn-outline-secondary">Год</button>
+                        <button class="btn btn-outline-secondary">Все</button>
+                        <form class="d-flex flex-wrap align-items-center gap-1 justify-content-around">
+                            <button class="btn btn-outline-secondary" type="submit" disabled>Интервал</button>
+                            <div class="d-flex flex-nowrap align-items-center ">
+                                <div class="d-flex flex-nowrap align-items-center ">
+                                    <input type="date" name="start-date-input" id="start-date-input"
+                                           class="visually-hidden start_date_input">
+                                    с
+                                    <button type="button" class="btn btn-link">Дата</button>
+                                </div>
+                                <div class="d-flex flex-nowrap align-items-center ">
+                                    <input type="date" name="finish-date-input" id="finish-date-input"
+                                           class="visually-hidden finish_date_input">
+                                    по
+                                    <button type="button" class="btn btn-link">Дата</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="mb-5 overflow-auto">
+                    <table class="table border-top border-bottom">
+                        <thead class="border-bottom">
+                        <tr>
+                            <th scope="col" >№ Операции</th>
+                            <th scope="col">Тип</th>
+                            <th scope="col">Категория</th>
+                            <th scope="col">Сумма</th>
+                            <th scope="col">Дата</th>
+                            <th scope="col">Комментарий</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td class="text-success">доход</td>
+                            <td>зарплата</td>
+                            <td>500$</td>
+                            <td>11.09.2022</td>
+                            <td></td>
+                            <td>
+                                <div class="d-flex align-items-center ">
+                                    <button type="button" class="btn  btn_icon me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.5 5.5C4.77614 5.5 5 5.72386 5 6V12C5 12.2761 4.77614 12.5 4.5 12.5C4.22386 12.5 4 12.2761 4 12V6C4 5.72386 4.22386 5.5 4.5 5.5Z" fill="black"/>
+                                            <path d="M7 5.5C7.27614 5.5 7.5 5.72386 7.5 6V12C7.5 12.2761 7.27614 12.5 7 12.5C6.72386 12.5 6.5 12.2761 6.5 12V6C6.5 5.72386 6.72386 5.5 7 5.5Z" fill="black"/>
+                                            <path d="M10 6C10 5.72386 9.77614 5.5 9.5 5.5C9.22386 5.5 9 5.72386 9 6V12C9 12.2761 9.22386 12.5 9.5 12.5C9.77614 12.5 10 12.2761 10 12V6Z" fill="black"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5 3C13.5 3.55228 13.0523 4 12.5 4H12V13C12 14.1046 11.1046 15 10 15H4C2.89543 15 2 14.1046 2 13V4H1.5C0.947715 4 0.5 3.55228 0.5 3V2C0.5 1.44772 0.947715 1 1.5 1H5C5 0.447715 5.44772 0 6 0H8C8.55229 0 9 0.447715 9 1H12.5C13.0523 1 13.5 1.44772 13.5 2V3ZM3.11803 4L3 4.05902V13C3 13.5523 3.44772 14 4 14H10C10.5523 14 11 13.5523 11 13V4.05902L10.882 4H3.11803ZM1.5 3V2H12.5V3H1.5Z" fill="black"/>
+                                        </svg>
+                                    </button>
+                                    <button type="button" class="btn btn_icon" >
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.1465 0.146447C12.3417 -0.0488155 12.6583 -0.0488155 12.8536 0.146447L15.8536 3.14645C16.0488 3.34171 16.0488 3.65829 15.8536 3.85355L5.85357 13.8536C5.80569 13.9014 5.74858 13.9391 5.68571 13.9642L0.68571 15.9642C0.500001 16.0385 0.287892 15.995 0.146461 15.8536C0.00502989 15.7121 -0.0385071 15.5 0.0357762 15.3143L2.03578 10.3143C2.06092 10.2514 2.09858 10.1943 2.14646 10.1464L12.1465 0.146447ZM11.2071 2.5L13.5 4.79289L14.7929 3.5L12.5 1.20711L11.2071 2.5ZM12.7929 5.5L10.5 3.20711L4.00001 9.70711V10H4.50001C4.77616 10 5.00001 10.2239 5.00001 10.5V11H5.50001C5.77616 11 6.00001 11.2239 6.00001 11.5V12H6.29291L12.7929 5.5ZM3.03167 10.6755L2.92614 10.781L1.39754 14.6025L5.21903 13.0739L5.32456 12.9683C5.13496 12.8973 5.00001 12.7144 5.00001 12.5V12H4.50001C4.22387 12 4.00001 11.7761 4.00001 11.5V11H3.50001C3.28561 11 3.10272 10.865 3.03167 10.6755Z" fill="black"/>
+                                    </svg>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td class="text-danger">расход</td>
+                            <td>жилье</td>
+                            <td>2 500$</td>
+                            <td>11.09.2022</td>
+                            <td></td>
+                            <td>
+                                <div class="d-flex align-items-center ">
+                                    <button type="button" class="btn  btn_icon me-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4.5 5.5C4.77614 5.5 5 5.72386 5 6V12C5 12.2761 4.77614 12.5 4.5 12.5C4.22386 12.5 4 12.2761 4 12V6C4 5.72386 4.22386 5.5 4.5 5.5Z" fill="black"/>
+                                            <path d="M7 5.5C7.27614 5.5 7.5 5.72386 7.5 6V12C7.5 12.2761 7.27614 12.5 7 12.5C6.72386 12.5 6.5 12.2761 6.5 12V6C6.5 5.72386 6.72386 5.5 7 5.5Z" fill="black"/>
+                                            <path d="M10 6C10 5.72386 9.77614 5.5 9.5 5.5C9.22386 5.5 9 5.72386 9 6V12C9 12.2761 9.22386 12.5 9.5 12.5C9.77614 12.5 10 12.2761 10 12V6Z" fill="black"/>
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M13.5 3C13.5 3.55228 13.0523 4 12.5 4H12V13C12 14.1046 11.1046 15 10 15H4C2.89543 15 2 14.1046 2 13V4H1.5C0.947715 4 0.5 3.55228 0.5 3V2C0.5 1.44772 0.947715 1 1.5 1H5C5 0.447715 5.44772 0 6 0H8C8.55229 0 9 0.447715 9 1H12.5C13.0523 1 13.5 1.44772 13.5 2V3ZM3.11803 4L3 4.05902V13C3 13.5523 3.44772 14 4 14H10C10.5523 14 11 13.5523 11 13V4.05902L10.882 4H3.11803ZM1.5 3V2H12.5V3H1.5Z" fill="black"/>
+                                        </svg>
+                                    </button>
+                                    <button type="button" class="btn btn_icon" >
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.1465 0.146447C12.3417 -0.0488155 12.6583 -0.0488155 12.8536 0.146447L15.8536 3.14645C16.0488 3.34171 16.0488 3.65829 15.8536 3.85355L5.85357 13.8536C5.80569 13.9014 5.74858 13.9391 5.68571 13.9642L0.68571 15.9642C0.500001 16.0385 0.287892 15.995 0.146461 15.8536C0.00502989 15.7121 -0.0385071 15.5 0.0357762 15.3143L2.03578 10.3143C2.06092 10.2514 2.09858 10.1943 2.14646 10.1464L12.1465 0.146447ZM11.2071 2.5L13.5 4.79289L14.7929 3.5L12.5 1.20711L11.2071 2.5ZM12.7929 5.5L10.5 3.20711L4.00001 9.70711V10H4.50001C4.77616 10 5.00001 10.2239 5.00001 10.5V11H5.50001C5.77616 11 6.00001 11.2239 6.00001 11.5V12H6.29291L12.7929 5.5ZM3.03167 10.6755L2.92614 10.781L1.39754 14.6025L5.21903 13.0739L5.32456 12.9683C5.13496 12.8973 5.00001 12.7144 5.00001 12.5V12H4.50001C4.22387 12 4.00001 11.7761 4.00001 11.5V11H3.50001C3.28561 11 3.10272 10.865 3.03167 10.6755Z" fill="black"/>
+                                    </svg>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade show" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-2">
+            <div class="modal-body align-content-center ">
+                <div class=" fs-4 text-center mb-4">
+                    Вы действительно хотите удалить операцию?
+                </div>
+
+                <div class="d-flex align-items-center justify-content-around">
+                    <button type="button" class="btn btn-success" >Да, удалить</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Не удалять</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="./src/app.js"></script>
+</body>
+</html>

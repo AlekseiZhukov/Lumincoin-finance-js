@@ -6,22 +6,20 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/common.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Главная</title>
+    <title>Создать категорию дохода</title>
 </head>
 <body>
 
-<div class="layout main">
+<div class="layout income">
     <div class="header__menu-btn" id="header__menu-btn">
         <span></span><span></span><span></span>
     </div>
     <div class="container-fluid ">
-
         <div class="row flex-nowrap min-vh-100">
-
             <div class="col-sm-4 col-md-3 col-xxl-2 d-flex flex-column flex-shrink-0 p-0 bg-white justify-content-between border-end sidebar_wrap "
                  id="sidebar_wrap">
 
-                <a href="/"
+                <a href="layout.html"
                    class="d-flex align-items-center justify-content-center mb-3 mb-md-0 link-dark text-decoration-none p-3 pt-5">
                     <div class="logo ">
                         <img src="./static/images/Logo.png" alt="Логотип">
@@ -30,7 +28,7 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto p-3 mt-5">
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" aria-current="page">
+                        <a href="layout.html" class="nav-link active" aria-current="page">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-house " viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -42,7 +40,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="income-and-expenses.html" class="nav-link link-dark">
+                        <a href="#" class="nav-link link-dark">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-cash-coin" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -104,99 +102,26 @@
                 </div>
 
             </div>
-            <div class="col-sm-8 col-md-9 col-xxl-10 pt-5 ps-sm-5">
-                <h1 class="mt-sm-5 ms-3 mb-5 fs-1">Главная</h1>
+            <div class=" col-sm-8 col-md-9 col-xxl-10 pt-5 ps-sm-5">
+                <h2 class="mt-sm-5 ms-3 mb-5 fs-1">Создание категории доходов</h2>
                 <div class="ms-3 mb-5">
-                    <div class="d-flex w-100 align-items-center flex-wrap gap-1">
-                        <button class="btn btn-outline-secondary">Сегодня</button>
-                        <button class="btn btn-outline-secondary">Неделя</button>
-                        <button class="btn btn-outline-secondary">Месяц</button>
-                        <button class="btn btn-outline-secondary">Год</button>
-                        <button class="btn btn-outline-secondary">Все</button>
-                        <form class="d-flex flex-wrap align-items-center gap-1 justify-content-around">
-                            <button class="btn btn-outline-secondary" type="submit" disabled>Интервал</button>
-                            <div class="d-flex flex-nowrap align-items-center ">
-                                <div class="d-flex flex-nowrap align-items-center ">
-                                    <input type="date" name="start-date-input" id="start-date-input"
-                                           class="visually-hidden start_date_input">
-                                    с
-                                    <button type="button" class="btn btn-link">Дата</button>
-                                </div>
-                                <div class="d-flex flex-nowrap align-items-center ">
-                                    <input type="date" name="finish-date-input" id="finish-date-input"
-                                           class="visually-hidden finish_date_input">
-                                    по
-                                    <button type="button" class="btn btn-link">Дата</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                    <input class="form-control mb-4" type="text" placeholder="Название..." >
+
+                        <div class="d-flex align-items-center ">
+                            <button type="button" class="btn btn-success me-2" >Создать</button>
+                            <button type="button" class="btn btn-danger" >Отмена</button>
+                        </div>
+
                 </div>
-                <div class="d-flex flex-wrap w-100 justify-content-around">
-                    <div class="d-flex flex-column align-items-center mb-5">
-                        <h2 class=" diagram_title mb-4">Доходы</h2>
-                        <div class="d-flex align-items-center flex-wrap mb-5">
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols red "></div>
-                                <div class="diagram_symbols_text">Red</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols orange"></div>
-                                <div class="diagram_symbols_text">Orange</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols yellow"></div>
-                                <div class="diagram_symbols_text">Yellow</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols green"></div>
-                                <div class="diagram_symbols_text">Green</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols blue"></div>
-                                <div class="diagram_symbols_text">Blue</div>
-                            </div>
-                        </div>
-                        <div class="diagram_img">
-                            <img src="./static/images/diagram1.png" alt="Диаграмма" >
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column align-items-center">
-                        <h2 class=" diagram_title mb-4">Расходы</h2>
-                        <div class="d-flex align-items-center flex-wrap mb-5">
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols red "></div>
-                                <div class="diagram_symbols_text">Red</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols orange"></div>
-                                <div class="diagram_symbols_text">Orange</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols yellow"></div>
-                                <div class="diagram_symbols_text">Yellow</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols green"></div>
-                                <div class="diagram_symbols_text">Green</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols blue"></div>
-                                <div class="diagram_symbols_text">Blue</div>
-                            </div>
-                        </div>
-                        <div class="diagram_img">
-                            <img src="./static/images/diagram2.png" alt="Диаграмма" >
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-    <script src="./src/app.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="./src/app.js"></script>
 </body>
 </html>

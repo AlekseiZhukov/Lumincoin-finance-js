@@ -6,22 +6,20 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/common.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Главная</title>
+    <title>Расходы</title>
 </head>
 <body>
 
-<div class="layout main">
+<div class="layout income">
     <div class="header__menu-btn" id="header__menu-btn">
         <span></span><span></span><span></span>
     </div>
     <div class="container-fluid ">
-
         <div class="row flex-nowrap min-vh-100">
-
             <div class="col-sm-4 col-md-3 col-xxl-2 d-flex flex-column flex-shrink-0 p-0 bg-white justify-content-between border-end sidebar_wrap "
                  id="sidebar_wrap">
 
-                <a href="/"
+                <a href="layout.html"
                    class="d-flex align-items-center justify-content-center mb-3 mb-md-0 link-dark text-decoration-none p-3 pt-5">
                     <div class="logo ">
                         <img src="./static/images/Logo.png" alt="Логотип">
@@ -30,7 +28,7 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto p-3 mt-5">
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" aria-current="page">
+                        <a href="layout.html" class="nav-link active" aria-current="page">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-house " viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -42,7 +40,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="income-and-expenses.html" class="nav-link link-dark">
+                        <a href="#" class="nav-link link-dark">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-cash-coin" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -69,12 +67,12 @@
 
                                     <ul class="accordion-body nav nav-pills flex-column mb-auto p-0 ">
                                         <li class="nav-item ">
-                                            <a href="income.html" class="nav-link active" aria-current="page">
+                                            <a href="income.html" class="nav-link " aria-current="page">
                                                 <span class="ms-2 lh-1 ">Доходы</span>
                                             </a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a href="expenses.html" class="nav-link " aria-current="page">
+                                            <a href="expenses.html" class="nav-link active" aria-current="page">
                                                 <span class="ms-2 lh-1 ">Расходы</span>
                                             </a>
                                         </li>
@@ -89,12 +87,12 @@
                 <div class="dropdown p-3 dr">
                     <a href="#" class="d-flex align-items-center link-dark text-decoration-none "
                        data-bs-toggle="dropdown" aria-expanded="false">
-                        <span class="dropdown_ico ">
+                        <div class="dropdown_ico ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-person" viewBox="0 0 16 16">
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
                             </svg>
-                        </span>
+                        </div>
 
                         <div>RomanChernov</div>
                     </a>
@@ -104,99 +102,108 @@
                 </div>
 
             </div>
-            <div class="col-sm-8 col-md-9 col-xxl-10 pt-5 ps-sm-5">
-                <h1 class="mt-sm-5 ms-3 mb-5 fs-1">Главная</h1>
+            <div class=" col-sm-8 col-md-9 col-xxl-10 pt-5 ps-sm-5">
+                <h1 class="mt-sm-5 ms-3 mb-5 fs-1">Расходы</h1>
                 <div class="ms-3 mb-5">
-                    <div class="d-flex w-100 align-items-center flex-wrap gap-1">
-                        <button class="btn btn-outline-secondary">Сегодня</button>
-                        <button class="btn btn-outline-secondary">Неделя</button>
-                        <button class="btn btn-outline-secondary">Месяц</button>
-                        <button class="btn btn-outline-secondary">Год</button>
-                        <button class="btn btn-outline-secondary">Все</button>
-                        <form class="d-flex flex-wrap align-items-center gap-1 justify-content-around">
-                            <button class="btn btn-outline-secondary" type="submit" disabled>Интервал</button>
-                            <div class="d-flex flex-nowrap align-items-center ">
-                                <div class="d-flex flex-nowrap align-items-center ">
-                                    <input type="date" name="start-date-input" id="start-date-input"
-                                           class="visually-hidden start_date_input">
-                                    с
-                                    <button type="button" class="btn btn-link">Дата</button>
-                                </div>
-                                <div class="d-flex flex-nowrap align-items-center ">
-                                    <input type="date" name="finish-date-input" id="finish-date-input"
-                                           class="visually-hidden finish_date_input">
-                                    по
-                                    <button type="button" class="btn btn-link">Дата</button>
-                                </div>
+                    <div class=" row d-flex w-100 align-items-center flex-wrap gap-4">
+                        <div class="border rounded-3 p-3 col">
+                            <h3 class="">Еда</h3>
+                            <div class="d-flex flex-nowrap gap-2">
+                                <button class="btn btn-primary " >Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
                             </div>
-                        </form>
+                        </div>
+                        <div class="border rounded-3 p-3 col">
+                            <h3 class="">Жилье</h3>
+                            <div class="d-flex flex-nowrap gap-2">
+                                <button class="btn btn-primary">Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                            </div>
+                        </div>
+                        <div class="border rounded-3 p-3 col">
+                            <h3 class="">Здоровье</h3>
+                            <div class="d-flex flex-nowrap gap-2">
+                                <button class="btn btn-primary">Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                            </div>
+                        </div>
+                        <div class="border rounded-3 p-3 col">
+                            <h3 class="">Кафе</h3>
+                            <div class="d-flex flex-nowrap gap-2">
+                                <button class="btn btn-primary">Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                            </div>
+                        </div>
+                        <div class="border rounded-3 p-3 col">
+                            <h3 class="">Авто</h3>
+                            <div class="d-flex flex-nowrap gap-2">
+                                <button class="btn btn-primary">Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                            </div>
+                        </div>
+                        <div class="border rounded-3 p-3 col">
+                            <h3 class="">Одежда</h3>
+                            <div class="d-flex flex-nowrap gap-2">
+                                <button class="btn btn-primary">Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                            </div>
+                        </div>
+                        <div class="border rounded-3 p-3 col">
+                            <h3 class="">Развлечения</h3>
+                            <div class="d-flex flex-nowrap gap-2">
+                                <button class="btn btn-primary">Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                            </div>
+                        </div>
+                        <div class="border rounded-3 p-3 col">
+                            <h3 class="">Счета</h3>
+                            <div class="d-flex flex-nowrap gap-2">
+                                <button class="btn btn-primary">Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                            </div>
+                        </div>
+                        <div class="border rounded-3 p-3 col">
+                            <h3 class="">Спорт</h3>
+                            <div class="d-flex flex-nowrap gap-2">
+                                <button class="btn btn-primary">Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                            </div>
+                        </div>
+                        <div class="border rounded-3 p-0 col h-100">
+                            <a href="create-expenses.html" class="btn w-100 h-100 btn_add_item">
+                                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.5469 6.08984V9.05664H0.902344V6.08984H14.5469ZM9.32422 0.511719V15.0039H6.13867V0.511719H9.32422Z" fill="#CED4DA"/>
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="d-flex flex-wrap w-100 justify-content-around">
-                    <div class="d-flex flex-column align-items-center mb-5">
-                        <h2 class=" diagram_title mb-4">Доходы</h2>
-                        <div class="d-flex align-items-center flex-wrap mb-5">
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols red "></div>
-                                <div class="diagram_symbols_text">Red</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols orange"></div>
-                                <div class="diagram_symbols_text">Orange</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols yellow"></div>
-                                <div class="diagram_symbols_text">Yellow</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols green"></div>
-                                <div class="diagram_symbols_text">Green</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols blue"></div>
-                                <div class="diagram_symbols_text">Blue</div>
-                            </div>
-                        </div>
-                        <div class="diagram_img">
-                            <img src="./static/images/diagram1.png" alt="Диаграмма" >
-                        </div>
-                    </div>
-                    <div class="d-flex flex-column align-items-center">
-                        <h2 class=" diagram_title mb-4">Расходы</h2>
-                        <div class="d-flex align-items-center flex-wrap mb-5">
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols red "></div>
-                                <div class="diagram_symbols_text">Red</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols orange"></div>
-                                <div class="diagram_symbols_text">Orange</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols yellow"></div>
-                                <div class="diagram_symbols_text">Yellow</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols green"></div>
-                                <div class="diagram_symbols_text">Green</div>
-                            </div>
-                            <div class="d-flex flex-nowrap align-items-center">
-                                <div class="diagram_symbols blue"></div>
-                                <div class="diagram_symbols_text">Blue</div>
-                            </div>
-                        </div>
-                        <div class="diagram_img">
-                            <img src="./static/images/diagram2.png" alt="Диаграмма" >
-                        </div>
-                    </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade show" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" >
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-2">
+            <div class="modal-body align-content-center ">
+                <div class=" fs-4 text-center mb-4">
+                    Вы действительно хотите удалить категорию?
+                </div>
+
+                <div class="d-flex align-items-center justify-content-around">
+                    <button type="button" class="btn btn-success" >Да, удалить</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Не удалять</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
-    <script src="./src/app.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="./src/app.js"></script>
 </body>
 </html>

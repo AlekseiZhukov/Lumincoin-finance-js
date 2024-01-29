@@ -1,5 +1,5 @@
 const path = require('path');
-const autoprefixer = require('autoprefixer');
+//const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 
@@ -29,7 +29,7 @@ module.exports = {
         }),
     ],
 
-    module: {
+   /* module: {
         rules: [
             {
                 test: /\.(scss)$/,
@@ -56,6 +56,6 @@ module.exports = {
                 ]
             },
         ]
-    },
+    },*/
 
 };

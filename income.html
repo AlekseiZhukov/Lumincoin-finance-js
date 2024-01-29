@@ -6,7 +6,7 @@
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/common.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Главная</title>
+    <title>Доходы</title>
 </head>
 <body>
 
@@ -19,7 +19,7 @@
             <div class="col-sm-4 col-md-3 col-xxl-2 d-flex flex-column flex-shrink-0 p-0 bg-white justify-content-between border-end sidebar_wrap "
                  id="sidebar_wrap">
 
-                <a href="/"
+                <a href="layout.html"
                    class="d-flex align-items-center justify-content-center mb-3 mb-md-0 link-dark text-decoration-none p-3 pt-5">
                     <div class="logo ">
                         <img src="./static/images/Logo.png" alt="Логотип">
@@ -28,7 +28,7 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto p-3 mt-5">
                     <li class="nav-item ">
-                        <a href="#" class="nav-link active" aria-current="page">
+                        <a href="layout.html" class="nav-link active" aria-current="page">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-house " viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -40,7 +40,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link link-dark">
+                        <a href="income-and-expenses.html" class="nav-link link-dark">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-cash-coin" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -67,12 +67,12 @@
 
                                     <ul class="accordion-body nav nav-pills flex-column mb-auto p-0 ">
                                         <li class="nav-item ">
-                                            <a href="#" class="nav-link active" aria-current="page">
+                                            <a href="income.html" class="nav-link active" aria-current="page">
                                                 <span class="ms-2 lh-1 ">Доходы</span>
                                             </a>
                                         </li>
                                         <li class="nav-item ">
-                                            <a href="#" class="nav-link " aria-current="page">
+                                            <a href="expenses.html" class="nav-link " aria-current="page">
                                                 <span class="ms-2 lh-1 ">Расходы</span>
                                             </a>
                                         </li>
@@ -109,37 +109,37 @@
                         <div class="border rounded-3 p-3 col">
                             <h3 class="">Депозиты</h3>
                             <div class="d-flex flex-nowrap gap-2">
-                                <button class="btn btn_income_edit " >Редактировать</button>
-                                <button class="btn btn_income_del" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                                <button class="btn btn-primary " >Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
                             </div>
                         </div>
                         <div class="border rounded-3 p-3 col">
                             <h3 class="">Зарплата</h3>
                             <div class="d-flex flex-nowrap gap-2">
-                                <button class="btn btn_income_edit">Редактировать</button>
-                                <button class="btn btn_income_del" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                                <button class="btn btn-primary">Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
                             </div>
                         </div>
                         <div class="border rounded-3 p-3 col">
                             <h3 class="">Сбережения</h3>
                             <div class="d-flex flex-nowrap gap-2">
-                                <button class="btn btn_income_edit">Редактировать</button>
-                                <button class="btn btn_income_del" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                                <button class="btn btn-primary">Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
                             </div>
                         </div>
                         <div class="border rounded-3 p-3 col">
                             <h3 class="">Инвестиции</h3>
                             <div class="d-flex flex-nowrap gap-2">
-                                <button class="btn btn_income_edit">Редактировать</button>
-                                <button class="btn btn_income_del" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
+                                <button class="btn btn-primary">Редактировать</button>
+                                <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Удалить</button>
                             </div>
                         </div>
                         <div class="border rounded-3 p-0 col h-100">
-                            <button class="btn w-100 h-100 btn_add_item">
+                            <a href="create-income.html" class="btn w-100 h-100 btn_add_item">
                                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M14.5469 6.08984V9.05664H0.902344V6.08984H14.5469ZM9.32422 0.511719V15.0039H6.13867V0.511719H9.32422Z" fill="#CED4DA"/>
                                 </svg>
-                            </button>
+                            </a>
                         </div>
 
 
@@ -160,8 +160,8 @@
                 </div>
 
                 <div class="d-flex align-items-center justify-content-around">
-                    <button type="button" class="btn btn_modal_del" >Да, удалить</button>
-                    <button type="button" class="btn btn_modal_not_del" data-bs-dismiss="modal">Не удалять</button>
+                    <button type="button" class="btn btn-success" >Да, удалить</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Не удалять</button>
                 </div>
             </div>
         </div>
