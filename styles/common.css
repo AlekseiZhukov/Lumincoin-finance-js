@@ -39,6 +39,7 @@ hr {
 }
 
 .sidebar_wrap {
+    width: 219px;
     position: relative;
     z-index: 100;
     border-color: #D9D9D9;
@@ -175,9 +176,17 @@ hr {
 .diagram_img img {
     width: 100%;
 }
-
+.category_card {
+    min-height: 121px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 .btn_add_item {
-    padding: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .btn_icon {
     width: fit-content;
