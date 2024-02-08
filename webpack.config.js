@@ -22,7 +22,6 @@ module.exports = {
         new CopyPlugin({
             patterns: [
                 { from: "templates", to: "templates" },
-                { from: "styles", to: "styles" },
                 { from: "static/fonts", to: "fonts" },
                 { from: "static/images", to: "images" },
             ],

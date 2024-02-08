@@ -1,12 +1,3 @@
-/*
-import {Form} from "./components/form.js";
-import {Choice} from "./components/choice.js";
-import {Test} from "./components/test.js";
-import {Result} from "./components/result.js";
-import {RightAnswers} from "./components/right-answers.js";
-import {Auth} from "./services/auth.js";
-*/
-
 import {Expenses} from "./components/expenses.js";
 import {Income} from "./components/income.js";
 import {CreateExpenses} from "./components/create-expenses.js";
@@ -27,9 +18,6 @@ export class Router {
         this.layoutElement = document.getElementById('content');
         this.mainContentElement = null;
         this.titleElement = document.getElementById('title');
-
-        //this.profileElement = document.getElementById('profile');
-        //this.profileFullNameElement = document.getElementById('profile-full-name');
 
         this.routes = [
             {
@@ -169,16 +157,6 @@ export class Router {
         }
         this.titleElement.innerText = newRoute.title;
 
-
-
-        /*        const userInfo = Auth.getUserInfo();
-                const accessToken = localStorage.getItem(Auth.accessTokenKey);
-                if (userInfo && accessToken) {
-                    this.profileElement.style.display = 'flex';
-                    this.profileFullNameElement.innerText = userInfo.fullName;
-                } else {
-                    this.profileElement.style.display = 'none';
-                }*/
         newRoute.load();
     }
 }

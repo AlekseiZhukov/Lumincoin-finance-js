@@ -1,5 +1,5 @@
-//import 'bootstrap/dist/css/bootstrap.min.css';
-//import * as bootstrap from 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/common.css';
 import {Modal} from 'bootstrap'
 import {Router} from "./router.js";
 

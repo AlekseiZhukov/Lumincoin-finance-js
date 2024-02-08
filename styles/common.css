@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Roboto";
-    src: url("../fonts/roboto.ttf");
+    src: url("../static/fonts/roboto.ttf");
 }
 
 * {
@@ -219,7 +219,7 @@ option {
         display: block;
     }
     .sidebar_wrap {
-        transform: translateX(-220px);
+        transform: translateX(-100%);
         transition: all ease .3s;
         position: absolute;
         top: 0;

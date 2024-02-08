@@ -54,9 +54,6 @@ export class Form {
         const that = this;
         this.fields.forEach(item => {
             item.element = document.getElementById(item.id);
-            if (!item.element.value) {
-                item.element.parentNode.style.border = '1px solid red';
-            }
             item.element.onchange = function () {
                 that.validateField.call(that, item, this)
             }
