@@ -1,23 +1,20 @@
-//import '../styles/styles.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import '../styles/common.css';
+import {Modal} from 'bootstrap'
+import {Router} from "./router.js";
 
-//import * as bootstrap from 'bootstrap'
+class App {
+    constructor() {
+        this.router = new Router();
+        window.addEventListener('DOMContentLoaded', this.handleRoutChanging.bind(this));
+        window.addEventListener('popstate', this.handleRoutChanging.bind(this));
+    }
 
-console.log('Init project');
-/*(function app () {
+    handleRoutChanging() {
+        this.router.openRoute();
+    }
+}
 
-})()*/
-document.addEventListener('DOMContentLoaded', function () {
-    const menuBtn = document.getElementById('header__menu-btn');
-    const menuMobile = document.getElementById('sidebar_wrap');
-    menuBtn.addEventListener('click', () => {
-        menuMobile.classList.toggle('active');
-        menuBtn.classList.toggle('active');
-        if (menuMobile.classList.contains('active')){
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'auto'
-        }
-    })
+(new App());
 
-})
 
