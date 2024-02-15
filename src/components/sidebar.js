@@ -1,3 +1,4 @@
+import {Tooltip} from 'bootstrap';
 import {Auth} from "../services/auth.js";
 import {CustomHttp} from "../services/custom-http.js";
 import config from "../../config/config.js";
@@ -13,15 +14,26 @@ export class Sidebar {
         this.navLinksElements = null;
         this.headerBtnMenuButtonElement = null;
         this.menuMobileElement = null;
+        this.parentBalanceElement = null;
         this.balance = null;
         this.balanceElement = null;
+        this.editBalanceInput = null;
+        this.wrapBalanceElement = null;
         this.fullNameElement = null;
+        this.editBalanceInputElement = null;
+        this.saveBalanceButtonElement = null;
+        this.canselBalanceButtonElement = null;
+
+
 
         this.init()
     }
 
     async init() {
-
+        const accessTokenKey = localStorage.getItem(Auth.accessTokenKey);
+        if (!accessTokenKey) {
+            window.location.href = '#/login';
+        }
         try {
             const result = await CustomHttp.request(config.host + '/balance');
             if (result) {
@@ -54,8 +66,12 @@ export class Sidebar {
 
         this.balanceElement = document.getElementById('balance');
         this.fullNameElement = document.getElementById('full-name');
-        this.balanceElement.innerText = `${this.balance}$`
+        this.balanceElement.innerText = `${this.balance}$`;
         this.fullNameElement.innerText = `${userInfo.name}`;
+
+        this.balanceElement.addEventListener('click' , function() {
+            that.editBalance();
+        })
 
         this.headerBtnMenuButtonElement.addEventListener('click', () => {
             that.headerBtnMenuButtonElement.classList.toggle('active');
@@ -114,6 +130,73 @@ export class Sidebar {
                 link.classList.remove('link-dark')
             }
         });
+        [...document.querySelectorAll('[data-bs-toggle="tooltip"]')]
+            .forEach(el => new Tooltip(el));
+    }
+
+    editBalance() {
+        const that = this;
+        this.wrapBalanceElement = document.getElementById('wrapBalance');
+        this.parentBalanceElement = document.getElementById('parentBalance');
+        this.editBalanceInputElement = document.createElement('input');
+        this.editBalanceInputElement.className = 'form-control';
+        this.editBalanceInputElement.setAttribute('type', 'number');
+        this.editBalanceInputElement.setAttribute('name', 'editBalanceInput');
+        this.editBalanceInputElement.setAttribute('id', 'editBalanceInput');
+        this.editBalanceInputElement.setAttribute('patern', 'editBalanceInput');
+        this.editBalanceInputElement.value = this.balance;
+
+        this.saveBalanceButtonElement = document.createElement('button');
+        this.saveBalanceButtonElement.className = 'btn';
+        this.saveBalanceButtonElement.setAttribute('id', 'saveBalance');
+        const saveImageElement = document.createElement('img');
+        saveImageElement.setAttribute('src', 'images/check2.svg');
+        saveImageElement.setAttribute('alt', 'подтвердить');
+        this.saveBalanceButtonElement.appendChild(saveImageElement);
+
+        this.canselBalanceButtonElement = document.createElement('button');
+        this.canselBalanceButtonElement.className = 'btn';
+        this.canselBalanceButtonElement.setAttribute('id', 'canselEditBalance');
+        const canselImageElement = document.createElement('img');
+        canselImageElement.setAttribute('src', 'images/x.svg');
+        canselImageElement.setAttribute('alt', 'отменить');
+        this.canselBalanceButtonElement.appendChild(canselImageElement);
+        this.parentBalanceElement.style.display = 'none';
+        this.wrapBalanceElement.appendChild(this.editBalanceInputElement);
+        this.wrapBalanceElement.appendChild(this.saveBalanceButtonElement);
+        this.wrapBalanceElement.appendChild(this.canselBalanceButtonElement);
+
+        this.canselBalanceButtonElement.addEventListener('click', function () {
+            that.canselSaveBalance()
+
+        })
+
+        this.saveBalanceButtonElement.addEventListener('click', () => {
+            that.saveBalance();
+        })
+    }
+
+    canselSaveBalance () {
+        this.parentBalanceElement.removeAttribute('style')
+        this.editBalanceInputElement.remove();
+        this.saveBalanceButtonElement.remove();
+        this.canselBalanceButtonElement.remove();
+    }
+    async saveBalance() {
+        this.editBalanceInput = document.getElementById('editBalanceInput');
+        try {
+            const response = await CustomHttp.request(config.host + '/balance', 'PUT', {
+                newBalance: this.editBalanceInput.value
+            });
+            if (response && response.balance) {
+                this.balance = response.balance;
+                this.canselSaveBalance();
+                this.balanceElement.innerText = `${this.balance}$`;
+            }
+        } catch (e) {
+            throw new Error(e);
+        }
+
     }
 
 }

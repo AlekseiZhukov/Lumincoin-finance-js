@@ -130,6 +130,7 @@ export class Router {
     }
 
     async openRoute() {
+
         document.body.style.overflow = 'auto'
         const urlRoute = window.location.hash.split('?')[0];
         if (urlRoute === '#/logout') {
@@ -142,13 +143,20 @@ export class Router {
             return item.route === urlRoute;
         })
 
-        if (!newRoute) {
+        if (!newRoute ) {
             window.location.href = '#/login';
             return
         }
         this.layoutElement.innerHTML = await fetch(newRoute.template).then(response => response.text());
+
         if (urlRoute !== '#/login' && urlRoute !== '#/signup' ) {
-            new Sidebar(urlRoute)
+            const accessTokenKey = localStorage.getItem(Auth.accessTokenKey);
+            if (!accessTokenKey) {
+                window.location.href = '#/login';
+            } else {
+                new Sidebar(urlRoute)
+            }
+
         }
 
         if (newRoute.content) {
