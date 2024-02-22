@@ -155,7 +155,7 @@ hr {
 }
 .date_input {
     border: none;
-    width: 80px;
+    width: 90px;
 }
 .date_input::placeholder {
     text-decoration: underline;

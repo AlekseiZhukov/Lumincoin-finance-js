@@ -86,7 +86,11 @@ export class Form {
 
     validateForm() {
         if (this.page === 'signup') {
-            if (!this.passwordElement.value || !this.rePasswordElement.value || this.passwordElement.value !== this.rePasswordElement.value) {
+            if (!this.passwordElement.value
+                || !this.rePasswordElement.value
+                || this.passwordElement.value !== this.rePasswordElement.value
+            || !this.rePasswordElement.value.match(this.fields.filter( el => el.name === 'rePassword')[0].regex)
+            || !this.passwordElement.value.match(this.fields.filter( el => el.name === 'password')[0].regex)) {
                 this.rePasswordElement.parentNode.style.border = '1px solid red';
             } else {
                 this.passwordElement.parentNode.removeAttribute('style');

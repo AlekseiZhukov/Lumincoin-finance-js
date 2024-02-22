@@ -2,6 +2,7 @@ import {Tooltip} from 'bootstrap';
 import {Auth} from "../services/auth.js";
 import {CustomHttp} from "../services/custom-http.js";
 import config from "../../config/config.js";
+import {UpdateBalance} from "../utils/updateBalance.js";
 
 export class Sidebar {
     _sidebarTemplate = '../templates/sidebar.html';
@@ -25,14 +26,13 @@ export class Sidebar {
         this.canselBalanceButtonElement = null;
 
 
-
         this.init()
     }
 
     async init() {
         const accessTokenKey = localStorage.getItem(Auth.accessTokenKey);
         if (!accessTokenKey) {
-            window.location.href = '#/login';
+            return window.location.href = '#/login';
         }
         try {
             const result = await CustomHttp.request(config.host + '/balance');
@@ -41,7 +41,7 @@ export class Sidebar {
                     throw new Error(result.error);
                 }
                 this.balance = result.balance;
-                this.drawSidebar()
+                this.drawSidebar();
 
             }
         } catch (e) {
@@ -63,15 +63,17 @@ export class Sidebar {
 
         this.headerBtnMenuButtonElement = document.getElementById('header__menu-btn');
         this.menuMobileElement = document.getElementById('sidebar_wrap');
-
         this.balanceElement = document.getElementById('balance');
-        this.fullNameElement = document.getElementById('full-name');
-        this.balanceElement.innerText = `${this.balance}$`;
-        this.fullNameElement.innerText = `${userInfo.name}`;
+        if (this.balanceElement) {
+            this.balanceElement.innerText = `${this.balance}$`;
+            this.balanceElement.addEventListener('click', function () {
+                that.editBalance();
+            })
+        }
 
-        this.balanceElement.addEventListener('click' , function() {
-            that.editBalance();
-        })
+
+        this.fullNameElement = document.getElementById('full-name');
+        this.fullNameElement.innerText = `${userInfo.name}`;
 
         this.headerBtnMenuButtonElement.addEventListener('click', () => {
             that.headerBtnMenuButtonElement.classList.toggle('active');
@@ -83,11 +85,11 @@ export class Sidebar {
             }
         })
 
-        if (this.urlRoute === '#/expenses'
+        if (this.urlRoute === '#/expense'
             || this.urlRoute === '#/income'
-            || this.urlRoute === '#/create-expenses'
+            || this.urlRoute === '#/create-expense'
             || this.urlRoute === '#/create-income'
-            || this.urlRoute === '#/edit-expenses'
+            || this.urlRoute === '#/edit-expense'
             || this.urlRoute === '#/edit-income'
         ) {
             this.accordionButtonElement.classList.remove('collapsed');
@@ -113,9 +115,9 @@ export class Sidebar {
                 link.classList.remove('active');
             }
 
-            if ((that.urlRoute === '#/create-expenses' && link.getAttribute('href') === '#/expenses')
-                || (that.urlRoute === '#/edit-expenses' && link.getAttribute('href') === '#/expenses')
-                || (that.urlRoute === '#/expenses' && link.getAttribute('href') === '#/expenses')) {
+            if ((that.urlRoute === '#/create-expense' && link.getAttribute('href') === '#/expense')
+                || (that.urlRoute === '#/edit-expense' && link.getAttribute('href') === '#/expense')
+                || (that.urlRoute === '#/expense' && link.getAttribute('href') === '#/expense')) {
                 link.classList.add('active');
             }
             if ((that.urlRoute === '#/create-income' && link.getAttribute('href') === '#/income')
@@ -134,7 +136,7 @@ export class Sidebar {
             .forEach(el => new Tooltip(el));
     }
 
-    editBalance() {
+    async editBalance() {
         const that = this;
         this.wrapBalanceElement = document.getElementById('wrapBalance');
         this.parentBalanceElement = document.getElementById('parentBalance');
@@ -144,7 +146,8 @@ export class Sidebar {
         this.editBalanceInputElement.setAttribute('name', 'editBalanceInput');
         this.editBalanceInputElement.setAttribute('id', 'editBalanceInput');
         this.editBalanceInputElement.setAttribute('patern', 'editBalanceInput');
-        this.editBalanceInputElement.value = this.balance;
+
+        this.editBalanceInputElement.value = await UpdateBalance.getBalance();
 
         this.saveBalanceButtonElement = document.createElement('button');
         this.saveBalanceButtonElement.className = 'btn';
@@ -168,7 +171,6 @@ export class Sidebar {
 
         this.canselBalanceButtonElement.addEventListener('click', function () {
             that.canselSaveBalance()
-
         })
 
         this.saveBalanceButtonElement.addEventListener('click', () => {
@@ -176,12 +178,13 @@ export class Sidebar {
         })
     }
 
-    canselSaveBalance () {
+    canselSaveBalance() {
         this.parentBalanceElement.removeAttribute('style')
         this.editBalanceInputElement.remove();
         this.saveBalanceButtonElement.remove();
         this.canselBalanceButtonElement.remove();
     }
+
     async saveBalance() {
         this.editBalanceInput = document.getElementById('editBalanceInput');
         try {
@@ -196,7 +199,5 @@ export class Sidebar {
         } catch (e) {
             throw new Error(e);
         }
-
     }
-
 }
