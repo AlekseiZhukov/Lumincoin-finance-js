@@ -53,7 +53,7 @@
                                 </a>
                             </li>
                             <li class="nav-item ">
-                                <a href="#/expenses" class="nav-link " aria-current="page">
+                                <a href="#/expense" class="nav-link " aria-current="page">
                                     <span class="ms-2 lh-1 ">Расходы</span>
                                 </a>
                             </li>
@@ -63,7 +63,9 @@
             </div>
         </li>
     </ul>
-    <div class="p-3">Баланс <span class="text-primary" id="balance"></span></div>
+
+    <div class="p-3 d-flex" id="wrapBalance">
+        <span id="parentBalance">Баланс <a class="text-primary btn" id="balance" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Изменить баланс"></a></span></div>
     <hr>
     <div class="dropdown p-3 dr">
         <a href="javascript: void(0)" class="d-flex align-items-center link-dark text-decoration-none "

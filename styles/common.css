@@ -153,28 +153,23 @@ hr {
     height: 10px;
     margin: 0 10px;
 }
-
-.diagram_symbols.red {
-    background: #DC3545;
+.date_input {
+    border: none;
+    width: 90px;
 }
-.diagram_symbols.orange {
-    background: #FD7E14;
+.date_input::placeholder {
+    text-decoration: underline;
 }
-.diagram_symbols.yellow {
-    background: #FFC107;
+.date_input:hover {
+    cursor: pointer;
 }
-.diagram_symbols.green {
-    background: #20C997;
+.active_button_period {
+    background: #6C757D;
+    color:white;
 }
-.diagram_symbols.blue {
-    background: #0D6EFD;
-}
-.diagram_symbols_text {
-    font-size: 12px;
-    color: #290661;
-}
-.diagram_img img {
-    width: 100%;
+.active_button_period:disabled {
+    background: #6C757D;
+    color:white;
 }
 .category_card {
     min-height: 121px;
